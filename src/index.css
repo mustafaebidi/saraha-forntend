@@ -1,13 +1,105 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600;700;800;900&display=swap');
+
+@layer base {
+
+    body {
+      font-family: "Cairo", sans-serif;
+      direction: rtl;
+      background-color: #f5f8fa;
+    }
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Cairo", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&display=swap);
+
 }
+
+.Toastify__toast-body { 
+
+  font-family: "Cairo", sans-serif;
+
+}
+
+
+.heart_massage{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+
+}
+
+.heart_massage path:first-child{
+  fill:#b9b9b9;
+}
+.heart_massage path:last-child{
+  fill: red;
+
+  transform-origin: center;
+  transform: scale(0.4);
+  transition: 0.2s;
+  opacity: 0;
+}
+.heart_massage_active path:last-child{
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+.noScroll{
+  overflow: hidden;
+}
+
+
+.boxShadow{
+  box-shadow: 1px 1px 3px 0px #14131326;
+}
+
+
+
+@layer components {
+    .input {
+      @apply border text-sm  h-8 border-[#d4dbe0] focus:outline-none px-2 py-1 rounded
+    }
+}
+
+@layer utilities {
+  .boxShadow{
+    box-shadow: 1px 1px 3px 0px #14131326;
+  }
+}
+
+
+
+.reply{
+
+  animation: myfirst 0.4s ease-in-out
+
+}
+
+
+
+@keyframes myfirst {
+
+  from{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
+
+
+@keyframes bounceIn{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}
